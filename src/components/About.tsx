@@ -1,13 +1,8 @@
-import { RefObject } from "react";
 import { HIGHLIGHTS } from "../constants";
 
-interface AboutProps {
-  about: RefObject<HTMLElement>;
-}
-
-const About = ({ about }: AboutProps) => {
+const About = () => {
   return (
-    <section id="about" ref={about} className="py-20 bg-gray-800">
+    <section id="about" className="py-20 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -34,18 +29,6 @@ const About = ({ about }: AboutProps) => {
               platform, demonstrating my ability to handle complex applications
               from concept to production.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg px-4 py-2">
-                <span className="text-blue-400 font-medium">
-                  2+ Years Experience
-                </span>
-              </div>
-              <div className="bg-green-500/10 border border-green-500/20 rounded-lg px-4 py-2">
-                <span className="text-green-400 font-medium">
-                  10+ Projects Completed
-                </span>
-              </div>
-            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6">

@@ -1,13 +1,8 @@
-import { RefObject } from "react";
-import { SKILL_CATEGORIES } from "../constants";
+import { SKILL_CATEGORIES, TECHNOLOGIES } from "../constants";
 
-interface SkillsProps {
-  skills: RefObject<HTMLElement>;
-}
-
-const Skills = ({ skills }: SkillsProps) => {
+const Skills = () => {
   return (
-    <section id="skills" ref={skills} className="py-20 bg-gray-900">
+    <section id="skills" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -57,17 +52,7 @@ const Skills = ({ skills }: SkillsProps) => {
             Technologies I Work With
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-8">
-            {[
-              "React",
-              "TypeScript",
-              "JavaScript",
-              "HTML5",
-              "CSS3",
-              "Tailwind CSS",
-              "Git",
-              "Vite",
-              "Node.js",
-            ].map((tech) => (
+            {TECHNOLOGIES.map((tech) => (
               <div
                 key={tech}
                 className="bg-gray-800 p-4 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-110 group"

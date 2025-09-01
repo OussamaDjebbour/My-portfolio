@@ -1,14 +1,9 @@
-import { RefObject } from "react";
 import { ExternalLink, Github, Play } from "lucide-react";
 import { PROJECTS } from "../constants";
 
-interface ProjectsProps {
-  projects: RefObject<HTMLElement>;
-}
-
-const Projects = ({ projects }: ProjectsProps) => {
+const Projects = () => {
   return (
-    <section ref={projects} className="py-20 bg-gray-800">
+    <section id="projects" className="py-20 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -27,34 +22,43 @@ const Projects = ({ projects }: ProjectsProps) => {
               className="group bg-gray-900/50 rounded-xl border border-gray-700 overflow-hidden hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-[1.02]"
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden bg-gray-800">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-64 object-contain  group-hover:scale-105 transition-transform duration-500 bg-white/5 backdrop-blur-sm"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex gap-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex gap-3">
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 bg-blue-500 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors duration-200"
+                        className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-all duration-200 shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-0.5"
                       >
-                        <Play className="h-3 w-3" />
+                        <Play className="h-4 w-4" />
                         Live Demo
                       </a>
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 bg-gray-700 text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-gray-600 transition-colors duration-200"
+                        className="flex items-center gap-2 bg-gray-700/80 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition-all duration-200 shadow-lg transform hover:-translate-y-0.5"
                       >
-                        <Github className="h-3 w-3" />
+                        <Github className="h-4 w-4" />
                         Code
                       </a>
                     </div>
+                  </div>
+                </div>
+
+                {/* Project type indicator */}
+                <div className="absolute top-4 right-4">
+                  <div className="bg-gray-900/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium border border-gray-700">
+                    {project.title.includes("Netflix")
+                      ? "Streaming App"
+                      : "E-commerce"}
                   </div>
                 </div>
               </div>
