@@ -166,7 +166,7 @@ export const SOCIAL_LINKS = [
   {
     icon: <Linkedin className="h-5 w-5" />,
     name: "LinkedIn",
-    url: "https://linkedin.com/in/oussama-djebbour",
+    url: "https://www.linkedin.com/in/oussama-djebbour-87251827a/",
     color: "hover:text-blue-400",
   },
   {
